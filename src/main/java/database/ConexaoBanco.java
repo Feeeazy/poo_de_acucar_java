@@ -10,7 +10,6 @@ public class ConexaoBanco {
     private static final String URL = "jdbc:mysql://localhost:3306/poo_de_acucar";
     private static final String USER = "root";
     private static final String PASSWORD = "root";
-
     private Connection conexao = null;
 
     public Connection conectar(){

@@ -1,20 +1,19 @@
 package controllers;
 
-import views.AdicionarProdutoView;
-import views.PooDeAcucarScreen;
-import views.TelaVenda;
+import views.AddProdutoView;
+import views.PooDeAcucarView;
+import views.NovaVendaView;
 
 import javax.swing.*;
 
 public class ViewController {
-
-    private TelaVenda telaVenda;
-    private AdicionarProdutoView adicionarProdutoView;
-    private PooDeAcucarScreen pooDeAcucarScreen;
+    private NovaVendaView novaVendaView;
+    private AddProdutoView addProdutoView;
+    private PooDeAcucarView pooDeAcucarView;
 
     public ViewController() {}
 
-    public void iniciarTelaVenda() {
+    public void iniciarNovaVenda() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
@@ -22,24 +21,24 @@ public class ViewController {
         }
 
         SwingUtilities.invokeLater(() -> {
-            telaVenda = new TelaVenda();
-            telaVenda.setVisible(true);
+            novaVendaView = new NovaVendaView();
+            novaVendaView.setVisible(true);
         });
     }
 
-    public void abrirAdicionarProduto(TelaVenda telaVenda) {
-        this.telaVenda = telaVenda;
+    public void abrirAddProduto(NovaVendaView novaVendaView) {
+        this.novaVendaView = novaVendaView;
         SwingUtilities.invokeLater(() -> {
-            this.telaVenda.desativarInteracoes(telaVenda.getContentPane());
-            adicionarProdutoView = new AdicionarProdutoView(this.telaVenda);
-            adicionarProdutoView.setVisible(true);
+            this.novaVendaView.desativarInteracoes(novaVendaView.getContentPane());
+            addProdutoView = new AddProdutoView(this.novaVendaView);
+            addProdutoView.setVisible(true);
         });
     }
 
     public void abrirTelaPrincipal() {
         SwingUtilities.invokeLater(() -> {
-            pooDeAcucarScreen = new PooDeAcucarScreen();
-            pooDeAcucarScreen.setVisible(true);
+            pooDeAcucarView = new PooDeAcucarView(this);
+            pooDeAcucarView.setVisible(true);
         });
     }
 }

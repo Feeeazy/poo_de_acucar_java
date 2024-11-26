@@ -25,4 +25,5 @@ public class BotaoPersonalizado {
     public JButton getBotao() {
         return botao;
     }
+
 }

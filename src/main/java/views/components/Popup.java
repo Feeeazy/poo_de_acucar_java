@@ -1,8 +1,6 @@
 package views.components;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Popup extends JFrame {
     public String title;
@@ -17,19 +15,14 @@ public class Popup extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
    }
 
-   public void showMessage() {
+    public void showMessage() {
         JOptionPane.showMessageDialog(null, message);
    }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new Popup().setVisible(true);
-            }
-        });
+        SwingUtilities.invokeLater(() -> new Popup().setVisible(true));
     }
 
 }
