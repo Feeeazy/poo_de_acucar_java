@@ -34,10 +34,9 @@ public enum Botao {;
 
     }
 
-
     public enum Main {
-        NOVA_VENDA("src/main/java/Img/historicoVendaBttn.png"),
-        HISTORICO_VENDAS("src/main/java/Img/novaVendaBttn.png");
+        NOVA_VENDA("src/main/java/Img/novaVendaBttn.png"),
+        HISTORICO_VENDAS("src/main/java/Img/historicoVendaBttn.png");
 
         private final String path;
 

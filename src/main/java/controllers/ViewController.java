@@ -1,6 +1,7 @@
 package controllers;
 
 import views.AddProdutoView;
+import views.HistoricoVendaView;
 import views.PooDeAcucarView;
 import views.NovaVendaView;
 
@@ -10,6 +11,7 @@ public class ViewController {
     private NovaVendaView novaVendaView;
     private AddProdutoView addProdutoView;
     private PooDeAcucarView pooDeAcucarView;
+    private HistoricoVendaView historicoVendaView;
 
     public ViewController() {}
 
@@ -39,6 +41,13 @@ public class ViewController {
         SwingUtilities.invokeLater(() -> {
             pooDeAcucarView = new PooDeAcucarView(this);
             pooDeAcucarView.setVisible(true);
+        });
+    }
+
+    public void abrirHistoricoVendas() {
+        SwingUtilities.invokeLater(() -> {
+            historicoVendaView = new HistoricoVendaView();
+            historicoVendaView.setVisible(true);
         });
     }
 }

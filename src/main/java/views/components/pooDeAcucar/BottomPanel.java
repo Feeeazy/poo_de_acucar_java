@@ -5,8 +5,6 @@ import views.components.BotaoPersonalizado;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import Enum.Botao;
 
@@ -18,12 +16,7 @@ public class BottomPanel extends JPanel {
         BotaoPersonalizado historicoBttn = new BotaoPersonalizado(
                 69, 137, Botao.Main.HISTORICO_VENDAS.getPath()
         );
-        historicoBttn.getBotao().addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                System.out.println("Botão 'Histórico de Vendas' clicado");
-            }
-        });
+        historicoBttn.getBotao().addActionListener(ActionEvent -> viewController.abrirHistoricoVendas());
 
         BotaoPersonalizado novaVendaBttn = new BotaoPersonalizado(
                 69, 137, Botao.Main.NOVA_VENDA.getPath()
